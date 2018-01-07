@@ -24,7 +24,7 @@
 
 <table border="1">
     
-    {$tabOfQueryResult != null}
+    {if ($tabOfQueryResult != null)}
         {foreach $tabOfQueryResult as $contact}
             <tr>
             <td>{$contact->id}</td>
@@ -33,6 +33,7 @@
             <td><a href='mailto:{$contact->email}'>{$contact->email}</a></td>
             <td>{$contact->notes}</td>
             </tr>
-        {/foreach}        
+        {/foreach}   
+    {/if}     
 </table>
-<p>Nombre total d'élément : {$tabOfQueryResult != null ? count($tabOfQueryResult) : 0}</p>
+<p>Nombre total d'élément : {if ($tabOfQueryResult != null)} {$tabOfQueryResult|@count} {else}  0{/if}</p>
