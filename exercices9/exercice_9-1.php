@@ -1,6 +1,6 @@
 <?php
 require_once "DB.php";
-require_once('./Smarty/Smarty.class.php');
+require_once('./includes/class/Smarty/Smarty.class.php');
 $tpl = new Smarty();
 
 $db = new DB(array('hostname' => 'localhost',
